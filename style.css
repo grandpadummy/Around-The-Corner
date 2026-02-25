@@ -1,0 +1,66 @@
+/* The link for clippy
+    https://bennettfeely.com/clippy/
+
+
+    Set the pic to trapezoid and set the 
+    clip path at the bottom to 
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    Add this to section .textBox
+
+    Skew 1 translate will give the right side 
+    a bend where as skew 2 will 
+    bend the left side the opposite way
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #2E8B57;
+    overflow: hidden;
+}
+
+section .textBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #08A04B;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.skew1 h2,
+.textBox .skew2 h2{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 12em;
+    line-height: 1em;
+    color: yellow;
+    cursor: pointer;
+}
+
+.skew1 h2 {
+    opacity: 0.8;
+
+}
+
+.skew1 {
+    position: relative;
+    top: 50px;
+    transform: skewY(20deg);
+}
+
+.skew2 {
+    position: relative;
+    top: 50px;
+    transform: skewY(-20deg);
+}

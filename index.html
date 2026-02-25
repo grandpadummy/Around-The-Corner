@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Around The Bend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="skew1">
+            <h2 class="layer">Around The Bend</h2>
+        </div>
+        <div class="textBox">
+            <div class="skew2">
+            <h2 class="layer">Around The Bend</h2>
+        </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('mousemove',text);
+        function text(e){
+            this.querySelectorAll('.layer').forEach(layer=>{
+                let x = (window.innerWidth - e.pageX * 2)/2;
+                layer.style.transform = `translateX(${x}px)`;
+            })
+        } 
+    </script>
+</body>
+</html>
+
+
+<!--
+The formula for this effect:
+
+window.innerWidth: The total width of 
+the browser viewport.
+
+
+e.pageX: The horizontal coordinate of 
+the mouse pointer relative to the document.
+
+
+e.pageX * 2: This doubles the mouse position.
+
+
+(window.innerWidth - e.pageX * 2): This 
+calculates the remaining space on one side, 
+inverted based on the mouse side.
+
+
+/ 2: This scales the movement to be subtler, 
+often used to create a 3D effect where 
+objects move slower than the cursor.-->
